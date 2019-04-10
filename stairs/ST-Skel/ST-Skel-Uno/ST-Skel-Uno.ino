@@ -15,12 +15,11 @@ void setup() {
   mp3.begin();
 
   mp3.setSynchronous(bUseSynch);
-  //mp3.playTrackRepeat(file);
 }
 
 void loop() {
   if(digitalRead(13) == HIGH) { // Sensor is triggered
     mp3.playTrack(file);
-    delay(3500);
+    delay(4000);
   }
 }
