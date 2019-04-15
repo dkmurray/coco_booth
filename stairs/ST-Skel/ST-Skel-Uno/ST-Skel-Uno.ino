@@ -10,7 +10,7 @@ bool bUseSynch = true;   // use synchronous?
 uint8_t file = 001;
 
 void setup() {
-  pinMode(13, INPUT); // Set up PIR Sensor pin 13
+  pinMode(13, INPUT_PULLUP); // Set up Button pin 13
   Serial.begin(57600);
   mp3.begin();
 
@@ -18,7 +18,7 @@ void setup() {
 }
 
 void loop() {
-  if(digitalRead(13) == HIGH) { // Sensor is triggered
+  if(digitalRead(13) == LOW) { // Button is triggered
     mp3.playTrack(file);
     delay(4000);
   }
